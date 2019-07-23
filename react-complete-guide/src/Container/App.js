@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classes from './App.module.css';
-import Person from './Person/Person.js';
+import Persons from '../Persons/Persons';
+import CockPit from '../Cockpit/Cockpit';
 class App extends Component {
   state = {
     persons: [
@@ -49,42 +50,22 @@ class App extends Component {
 
   render() {
     let persons = null;
-    let btnClass = '';
     if (this.state.showPersons) {
-      persons = (
-        <div>
-          {this.state.persons.map((person, index) =>
-            <Person
-              name={person.name}
-              age={person.age}
-              key={person.id}
-              changed={this.nameChangeHandler.bind(this, person.id)}
-              click={this.deletePersonHandler.bind(this, index)}></Person>
-          )}
-        </div>
-      );
-
-      btnClass = classes.Red;
-      
+      persons = 
+        <Persons 
+          persons={this.state.persons}
+          changed={this.nameChangeHandler} 
+          delete={this.deletePersonHandler}>
+        </Persons>;      
     }
-
-    const assignedClasses = [];
-    if (this.state.persons.length <= 2) {
-      assignedClasses.push(classes.red);
-    }
-
-    if (this.state.persons.length <= 1) {
-      assignedClasses.push(classes.bold);
-    }
-
     // syntax sugar by using react module 
     // can write js by {}, then tertiary operator works
     return (
         <div className={classes.App}>
-          <p>hi, I am  a react App</p>
-          <p className={assignedClasses.join(" ")}>This is really working.</p>
-          <button className={btnClass}
-            onClick={this.togglePersonsHandler}>Switch Name</button>
+          <CockPit 
+            persons={this.state.persons}
+            click={this.togglePersonsHandler}
+            showPersons={this.state.showPersons}></CockPit>
           {persons}
         </div>
     );
