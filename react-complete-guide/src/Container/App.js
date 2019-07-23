@@ -10,7 +10,8 @@ class App extends Component {
       { id: "fff", name: 'Bei', age: 7 },
     ],
     otherState: 'some other value',
-    showPersons: false
+    showPersons: false,
+    changeCounter: 0
   }
 
   deletePersonHandler = (personIndex) => {
@@ -34,7 +35,14 @@ class App extends Component {
       if (person.id === id) person.name = event.target.value;
       return person;
     });
-    this.setState({ persons: persons });
+
+    // state value cannot be guaranteed synchronously 
+
+    this.setState((prevState, props) =>{
+      return { 
+      persons: persons,
+      changeCounter: prevState.changeCounter + 1
+    };});
     // const person = persons.find(p => {
     //   return p.id === id;
     // });

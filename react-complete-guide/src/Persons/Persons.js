@@ -1,5 +1,5 @@
 import React from 'react';
-import Person from './Person/Person.js';
+import Person from './Person/Person';
 
 const Persons = (props) => 
     props.persons.map((person, index) =>
@@ -8,7 +8,7 @@ const Persons = (props) =>
               age={person.age}
               key={person.id}
               changed={(event)=>{props.changed(person.id, event)}}
-              click={props.delete.bind(this, index)}></Person>
+              click={() => props.delete(index)}></Person>
           )
 
 
