@@ -8,7 +8,8 @@ const Persons = (props) =>
               age={person.age}
               key={person.id}
               changed={(event)=>{props.changed(person.id, event)}}
-              click={() => props.delete(index)}></Person>
+              click={() => props.delete(index)}
+              ></Person>
           )
 
 
