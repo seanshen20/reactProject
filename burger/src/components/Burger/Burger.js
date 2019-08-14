@@ -12,7 +12,7 @@ export default (props) => {
         .reduce((array, cur) => {
             return array.concat(cur);            
         }, []);
-
+        
     if (transformedIngrgredients.length === 0) {
         transformedIngrgredients = <p>Please start adding ingredients!</p>
     }
