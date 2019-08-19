@@ -1,0 +1,22 @@
+.Menu nav ul {
+    list-style-type: none;
+}
+
+.Menu nav ul li {
+    display: inline-block;
+    margin: 10px;
+}
+
+.Menu nav ul li a:hover, a:active{
+    color: brown;
+}
+
+.Menu nav ul li a {
+    text-decoration: none;
+}
+
+.active {
+    color: green;
+    border-bottom: 2px solid lightblue;
+    padding-bottom: 10px;
+}
