@@ -1,6 +1,12 @@
-import * as actionTypes from '../actions';
+import * as actionTypes from '../actions/actionsTypes';
+
 const initialState = {
     results: []
+}
+
+const deleteResult = (state, action) => {
+    const updatedArray = state.results.filter((ele) => ele.id !== action.value)
+    return {...state, updatedArray}
 }
 const reducer = (state = initialState, action) => {
     switch (action.type) { 
@@ -11,10 +17,7 @@ const reducer = (state = initialState, action) => {
             } 
             // filter return a new array, and here it did not touch array element (object) itself
         case actionTypes.DELETE_RESULT: {
-            return {
-                ...state,
-                results: state.results.filter((ele) => ele.id !== action.value)
-            }
+            return deleteResult(state, action)
         }       
         default: return state    
     }
