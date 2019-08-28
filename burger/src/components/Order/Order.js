@@ -9,7 +9,8 @@ const order = (props) => {
                 display: 'inline-block',
                 margin: '0 8px',
                 border: '1px solid #ccc',
-                padding: '6px'
+                padding: '6px',
+               
             }}
             key={i}>{i} ({props.ingredients[i]})</span>);
     }
