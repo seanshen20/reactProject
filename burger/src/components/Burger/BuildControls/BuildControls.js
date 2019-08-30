@@ -20,10 +20,10 @@ export default (props) => (
                 removed={() => props.ingredientsDeducted(ctrl.type)}
                 disabled={props.disableButton[ctrl.type]} />
         ))}
-        <button 
+        <button
             className={classes.OrderButton}
             disabled={!props.purchasable}
             onClick={props.ordered}
-            >ORDER NOW</button>
+        >{props.isAuth ? 'ORDER NOW' : 'SIGN UP TO ORDER'}</button>
     </div>
 );
