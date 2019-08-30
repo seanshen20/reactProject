@@ -15,7 +15,6 @@ class BurgerBuilder extends Component {
     }
 
     componentDidMount() {
-        console.log('burger builder mount')
         this.props.onInitIngredients()
         this.props.purchaseInit()
         // axios.get('/ingredients.json')

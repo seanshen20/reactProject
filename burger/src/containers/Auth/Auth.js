@@ -118,7 +118,7 @@ class Auth extends Component {
                 invalid={element.config.touched && !element.config.valid}
                 shouldValidate={element.config.validation} />
         ))
-        console.log(this.props.loading)
+   
         if (this.props.loading) {
             form = <Spinner />
         }

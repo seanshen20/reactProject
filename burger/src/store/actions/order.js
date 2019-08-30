@@ -63,7 +63,6 @@ export const fetchOrdersStart = () => {
 
 export const fetchOrders = (token, userId) => {
     return dispatch => {
-        console.log('dispatch1')
         dispatch(fetchOrdersStart())
         // https://react-burger-9cfda.firebaseio.com/orders.json?auth=eyJhbGciOiJSUA&orderBy="userId"&equalTo="Tzlh8JSI3caAsujL8aO94NJ98l12"
         const queryParams = '?auth=' + token + '&orderBy="userId"&equalTo="' + userId + '"'
