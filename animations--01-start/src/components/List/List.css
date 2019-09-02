@@ -20,3 +20,49 @@
 .ListItem:active {
     background-color: #ccc;
 }
+
+.ListOpen {
+    animation: openList 1s ease-out forwards
+}
+
+.ListClosed {
+    animation: closedList 1s ease-out forwards
+}
+
+.move-enter-active {
+    animation: openList 1s ease-out forwards
+}
+
+.move-exit-active {
+    animation: closedList 1s ease-out forwards
+}
+
+@keyframes openList {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%)
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(90%)
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes closedList {
+    0% {
+        opacity: 1;
+        transform: translateX(0)
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateX(60%)
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-100%)
+    }
+}
